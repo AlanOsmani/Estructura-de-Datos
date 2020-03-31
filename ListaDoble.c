@@ -1,32 +1,48 @@
-#include <stdio.h>
-#include <stdlib.h> 
+#include<stdio.h>
+#include<conio.h>
 
-struct Doble{
+typedef struct nodo{
 	int dato;
-	struct Doble *siguiente;
-  struct Doble *anterior;
-};
+	struct nodo *siguiente;
+       	struct nodo *anterior;
+}nodo;
 
-struct Doble * crear(int dato){
-	struct Doble *nueva=NULL;
-	nueva=(struct Doble *) malloc(sizeof(struct Doble));
-	if(nueva==NULL){
-		return NULL;
+nodo *inicio= NULL;
+nodo *ultimo=NULL;
+
+
+
+
+
+void insertar(struct nodo *nodo){
+	struct nodo *nuevo=NULL;
+	nuevo= (struct nodo *) malloc(sizeof(struct nodo *));
+	nuevo->dato=dato;
+
+	if(inicio==NULL){
+		inicio=nuevo;
+		inicio->siguiente=NULL;
+		inicio->ultimo=NULL;
+		inicio=ultimo;
 	}
-	nueva->dato=dato;
-	nueva->siguiente=NULL;
-	return nueva;
-} 
-
-struct Doble * insertar(struct Doble *lista, int dato){
-	struct Doble *nueva=crear(dato);
-	nueva->siguiente=lista;
-  lista->anterior=nueva;
-	return nueva;
+	else {
+		ultimo->siguiente=nuevo;
+		nuevo->siguiente=NULL;
+		nuevo->atras= ultimo;
+		ultimo=nuevo; 
+	}
 }
 
-int main(void){
-	struct Doble *miLista=crear(10);
-	if(miLista==NULL){
-		printf("No se pudo crear la lista\n");
+void mostrar(*nodo){
+	struct nodo *lista= (struct nodo*)malloc(sizeof(struct nodo*));
+	if(lista==NULL){
+		while(lista !=NULL){
+		printf("\n %d", actual->dato);
+		lista= lista->siguiente;
+		}
+	}
+	else {
 		return -1;
+	}
+}
+
