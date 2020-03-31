@@ -36,12 +36,7 @@ struct Lista * invertir(struct Lista *lista){
   return anterior;
 }
 
-/*struct Lista * eliminar(struct Lista *lista, int n){
-  int i=0;
-  while(lists!=NULL && i<n){
-    
-  }
-}*/
+
 
 void mostrar(struct Lista *lista){
 	while(lista!=NULL){
